@@ -2,19 +2,34 @@ import React from 'react'
 import { useState } from 'react';
 
 const Content = () => {
+        const[number,setAdd]=useState(0)
 
-    function changeColor(){
-        const colors=["red","blue","Yellow","green"];
-        const int=Math.floor(Math.random()*3);
-        return colors[int]
-    
-      }
+        const increment=()=>{
+          setAdd(number+1)
+        }
+        
+        const decrement=()=>{
+          setAdd(number-1)
+        }
+        const [name,setName]=useState("Trainee")
 
-     
+        const Traineename=()=>{
+          const Names=["Karthi","siva","Arun","Hari"];
+          const int=Math.floor(Math.random()*4)
+          setName (Names[int])
+        }
+  
   return (
     <main>
-       <p >The color is color</p>
-       <button >ChangeColor</button>
+       
+       <h1>Hello,{name}</h1>
+       <button onClick={Traineename}>Let's Go</button>
+      <h3>Give Rating {number}</h3>
+      <button onClick={increment}>ADD</button>
+      <button onClick={decrement}>SUB</button>
+      <button>SUBMIT</button>
+
+
     </main>
   
   )
